@@ -15,7 +15,7 @@ Installing
 **Via GIT:**
 
 ```sh
-git clone --recursive git@github.com:Shine-neko/thelia-cli.git ~/git/thia-cli
+git clone --recursive git@github.com:Shine-neko/thelia-cli.git ~/git/thelia-cli
 cd ~/git/thelia
 sudo chmod a+x ~/git/thia-cli/bin/thelia
 ```
