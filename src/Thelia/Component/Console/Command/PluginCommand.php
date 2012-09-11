@@ -1,6 +1,6 @@
 <?php
 
-namespace Thelia\Component\Console;
+namespace Thelia\Component\Console\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -15,23 +15,25 @@ class PluginCommand extends Command
     {
         $this
             ->setName('plugin:download')
-            ->setDescription('Greet someone')
+            ->setDescription('Gestion plugin')
             ->addArgument('download', InputArgument::OPTIONAL, '')
+            ->addArgument('activate', InputArgument::OPTIONAL, '')
         ;
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $download = $input->getArgument('download');
+        $download = $input->getArgument('activate');
         if ($download) {
             $dir = THELIA_ROOT . '/client/cache/plugin/';
-            $file = 'http://thelia.net/IMG/plugins_thelia/'.$download . '.zip';
-            $output->writeln( $dir );
+            $file = sprintf('http://thelia.net/IMG/plugins_thelia/%s.zip', $download);
+            $output->writeln( 'Downloading install package from ' .  $file);
             @mkdir($dir, 0777);
             if ($copy = copy($file, $dir . $download . '.zip')) {
-                $output->writeln('<info>La copie '.$file.' du fichier a réalisé.</info>');
+                $output->writeln(sprintf('<info>La copie "%s" du fichier a réalisé.</info>', $file));
             } else {
-                $output->writeln('<error>La copie '.$file.' du fichier a échoué.</error>');
+                $output->writeln(sprintf('<error>La copie "%s" du fichier a échoué.</error>', $file));
             }
 
         }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Thelia\Component\Console;
+namespace Thelia\Component\Console\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -15,7 +15,7 @@ class CoreCommand extends Command
     {
         $this
             ->setName('core:version')
-            ->setDescription('Greet someone')
+            ->setDescription('Thelia core')
             ->addArgument('version', InputArgument::OPTIONAL, 'Who do you want to greet?')
         ;
     }

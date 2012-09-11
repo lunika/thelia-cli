@@ -1,9 +1,9 @@
 <?php
 
 use Symfony\Component\Console\Application;
-use Thelia\Component\Console\CoreCommand;
-use Thelia\Component\Console\PluginCommand;
-use Thelia\Component\Console\CacheCommand;
+use Thelia\Component\Console\Command\CoreCommand;
+use Thelia\Component\Console\Command\PluginCommand;
+use Thelia\Component\Console\Command\CacheCommand;
 
 if ( PHP_SAPI !== 'cli' ) {
     echo "Only CLI access.\n";

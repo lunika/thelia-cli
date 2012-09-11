@@ -1,7 +1,7 @@
 What is Thelia-cli?
 --------------
 
-A set of tools for controlling WordPress installations from the command line.
+A set of tools for controlling Thelia installations from the command line.
 
 Requirements
 ------------
@@ -20,13 +20,13 @@ cd ~/git/thelia
 sudo chmod a+x ~/git/thia-cli/bin/thelia
 ```
 
-You can replace `~/git/thia-cli` with whatever you want.
+You can replace `~/git/thelia-cli` with whatever you want.
 
 
 Using
 -----
 
-Go into a WordPress root folder:
+Go into a Thelia root folder:
 
 ```
 cd /var/www/thelia/
@@ -43,7 +43,7 @@ Example usage:
 So this tells us which commands are installed: eg. google-sitemap, core, home, ...
 Between brackets you can see their sub commands.
 
-Let's for example try to install the hello dolly plugin from wordpress.org:
+Let's for example try to install the hello dolly plugin from thelia.net:
 
 ```
 thelia plugin:install hello-dolly
@@ -54,7 +54,7 @@ Output:
 ```
 Installing Hello Dolly (1.5)
 
-Downloading install package from http://downloads.WordPress.org/plugin/hello-dolly.1.5.zip ...
+Downloading install package from http://thelia.net/IMG/plugins_thelia/hello-dolly.zip ...
 Unpacking the package ...
 Installing the plugin ...
 
