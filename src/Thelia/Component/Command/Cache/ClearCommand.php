@@ -1,6 +1,6 @@
 <?php
 
-namespace Thelia\Component\Console\Command;
+namespace Thelia\Component\Command\Cache;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -9,7 +9,7 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
 
-class CacheCommand extends Command
+class ClearCommand extends Command
 {
     protected function configure()
     {
@@ -24,12 +24,13 @@ class CacheCommand extends Command
 
         $dir = THELIA_ROOT . '/client/cache/parseur/';
 
+        $output->writeln(sprintf('Clearing the cache for the <info>%s</info>', $dir));
         if ($dh = opendir($dir)) {
             while ($file = readdir($dh))
             {
                 if ($file == '.' || $file == '..') continue;
 
-                unlink($this->$dir . '/' . $file);
+                unlink($dir . '/' . $file);
             }
         }
 

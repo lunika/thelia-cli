@@ -1,6 +1,3 @@
-[submodule "vendor/php-cli-tools"]
-	path = vendor/php-cli-tools
-	url = git://github.com/jlogsdon/php-cli-tools.git
 [submodule "vendor/Symfony/Component/Console"]
 	path = vendor/Symfony/Component/Console
 	url = git://github.com/symfony/Console.git

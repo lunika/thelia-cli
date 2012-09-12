@@ -14,7 +14,7 @@ include THELIA_ROOT . '/fonctions/moteur.php';
 
 function thelia_cli_autoload($class)
 {
-    if($class == 'Variable') {
+    if(in_array($class, array('Variable', 'ActionsAdminModules'))) {
 
     } else if (strpos($class, 'Thelia')  === false) {
         include THELIA_CLI_ROOT . '../../vendor/' . str_replace(array('_', '\\'), '/', $class) . '.php';
@@ -26,4 +26,4 @@ function thelia_cli_autoload($class)
 
 spl_autoload_register('thelia_cli_autoload');
 
-include __DIR__ . '/Shell.php';
+include __DIR__ . '/Component/Console/Shell.php';
