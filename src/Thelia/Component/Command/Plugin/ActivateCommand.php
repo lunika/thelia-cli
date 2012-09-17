@@ -23,8 +23,13 @@ class ActivateCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $active = $input->getArgument('active');
+        $listPlugin = explode(',', $active);
+        foreach($listPlugin as $plugin){
+            \ActionsAdminModules::instance()->activer($plugin);
+        }
+        $output->writeln(sprintf('Plugins <info>%s</info> activated', implode(',', $listPlugin)));
 
-        \ActionsAdminModules::instance()->activer($active);
+
 
     }
 }

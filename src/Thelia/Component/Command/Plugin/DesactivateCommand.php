@@ -24,6 +24,11 @@ class DesactivateCommand extends Command
     {
         $desactive = $input->getArgument('desactive');
 
-        ActionsAdminModules::instance()->desactiver($desactive);
+        $active = $input->getArgument('active');
+        $listPlugin = explode(',', $active);
+        foreach($listPlugin as $plugin){
+            \ActionsAdminModules::instance()->activer($plugin);
+        }
+        $output->writeln(sprintf('Plugins <info>%s</info> activated', implode(',', $listPlugin)));
     }
 }
