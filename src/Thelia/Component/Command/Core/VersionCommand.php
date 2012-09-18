@@ -21,7 +21,6 @@ class VersionCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $theliaVersion = \Variable::lire("version");
-        $output->writeln(substr($theliaVersion, 0, 1) . "." . substr($theliaVersion, 1, 1) . "." . substr($theliaVersion, 2, 1));
+        $output->writeln(rtrim(preg_replace("/(.)/", "$1.", \Variable::lire("version")), "."));
     }
 }

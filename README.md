@@ -16,11 +16,14 @@ Installing
 
 ```sh
 git clone --recursive git@github.com:Shine-neko/thelia-cli.git ~/git/thelia-cli
-cd ~/git/thelia
-sudo chmod a+x ~/git/thia-cli/bin/thelia
+cd ~/git/thelia-cli
+composer.phar install
+sudo chmod a+x bin/thelia
 ```
 
 You can replace `~/git/thelia-cli` with whatever you want.
+
+You can add thelia to your PATH to use thelia directly in you thelia root directory like this : `thelia help` instead of `path/to/thelia-cli/bin/thelia help`
 
 
 Using
@@ -32,7 +35,7 @@ Go into a Thelia root folder:
 cd /var/www/thelia/
 ```
 
-Typing `thelia help` should show you an output similar to this:
+Typing `path/to/thelia-cli/bin/thelia help` should show you an output similar to this:
 
 ```
 Example usage:
