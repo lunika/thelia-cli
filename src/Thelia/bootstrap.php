@@ -11,6 +11,8 @@ define( 'THELIA_CLI_VERSION', '0.1' );
 $sortie = false;
 include THELIA_ROOT . '/fonctions/moteur.php';
 
+$loader = require_once __DIR__ . "/../../vendor/autoload.php";
+
 
 function thelia_cli_autoload($class)
 {
@@ -36,11 +38,6 @@ function thelia_cli_autoload($class)
                 break;
         }
 
-    } else if (strpos($class, 'Thelia')  === false) {
-        include THELIA_CLI_ROOT . '../../vendor/' . str_replace(array('_', '\\'), '/', $class) . '.php';
-    }
-    else {
-        include THELIA_CLI_ROOT .'../' . str_replace(array('_', '\\'), '/', $class) . '.php';
     }
 }
 
