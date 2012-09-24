@@ -15,15 +15,14 @@ Installing
 **Via GIT:**
 
 ```sh
-git clone --recursive git@github.com:Shine-neko/thelia-cli.git ~/git/thelia-cli
+git clone git@github.com:Shine-neko/thelia-cli.git ~/git/thelia-cli
 cd ~/git/thelia-cli
-composer.phar install
 sudo chmod a+x bin/thelia
 ```
 
 You can replace `~/git/thelia-cli` with whatever you want.
 
-You can add thelia to your PATH to use thelia directly in you thelia root directory like this : `thelia help` instead of `path/to/thelia-cli/bin/thelia help`
+You can add thelia to your PATH to use thelia directly in your thelia root directory like this : `thelia help` instead of `path/to/thelia-cli/bin/thelia help`
 
 
 Using
