@@ -15,6 +15,7 @@ $console->add(new \Thelia\Component\Command\Plugin\DownloadCommand);
 $console->add(new \Thelia\Component\Command\Plugin\ActivateCommand);
 $console->add(new \Thelia\Component\Command\Plugin\DesactivateCommand);
 $console->add(new \Thelia\Component\Command\Plugin\ListCommand);
+$console->add(new \Thelia\Component\Command\Plugin\GenerateCommand);
 
 // Cache
 $console->add(new \Thelia\Component\Command\Cache\ClearCommand);
