@@ -7,6 +7,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Thelia\Component\Toolbox\Toolbox;
 
 class GenerateCommand extends Command {
     protected function configure()
@@ -21,7 +22,7 @@ class GenerateCommand extends Command {
     protected function execute(InputInterface $input, OutputInterface $output)
     {
 
-        $nom = $input->getArgument('name');
+        $nom = Toolbox::camelize($input->getArgument('name'));
         
         $pluginDirectory = THELIA_ROOT . '/client/plugins/';
         
@@ -38,9 +39,9 @@ class GenerateCommand extends Command {
         if(mkdir($pluginDirectory.$nom)){
             $content = file_get_contents(__DIR__ . '/skeleton/Nomplugin.class.php');
             
-            $content = str_replace('%%nomplugin%%',  ucfirst($nom), $content);
+            $content = str_replace('%%nomplugin%%',  $nom, $content);
             
-            file_put_contents($pluginDirectory.$nom.'/'.ucfirst($nom).'.class.php', $content);
+            file_put_contents($pluginDirectory.$nom.'/'.$nom.'.class.php', $content);
             
             $output->writeln('création du plugin '.$nom.' réussie');
         }
