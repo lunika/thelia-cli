@@ -27,12 +27,12 @@ class GenerateCommand extends Command {
         $pluginDirectory = THELIA_ROOT . '/client/plugins/';
         
         if(is_writable($pluginDirectory) === false){
-            $output->writeln("Impossible d'écrire dans le répertoire client/plugins. Merci de vérifier les droits de ce répertoire");
+            $output->writeln("<error>Impossible d'écrire dans le répertoire client/plugins. Merci de vérifier les droits de ce répertoire</error>");
             exit;
         }
         
         if(file_exists($pluginDirectory.$nom)){
-            $output->writeln('Le plugin '.$nom.' existe déjà');
+            $output->writeln('<error>Le plugin '.$nom.' existe déjà</error>');
             exit;
         }
         
@@ -43,7 +43,7 @@ class GenerateCommand extends Command {
             
             file_put_contents($pluginDirectory.$nom.'/'.$nom.'.class.php', $content);
             
-            $output->writeln('création du plugin '.$nom.' réussie');
+            $output->writeln('<info>création du plugin '.$nom.' réussie</info>');
         }
 
         
